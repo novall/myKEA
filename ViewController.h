@@ -10,8 +10,20 @@
 
 @interface ViewController : UIViewController
 
-- (IBAction)bedButtonPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *aisleButton;
+@property (strong, nonatomic) IBOutlet UIButton *furnitureButton;
+@property (strong, nonatomic) IBOutlet UIButton *doneButton;
+
+@property (strong, nonatomic) IBOutlet UIImageView *dottedLine1;
+@property (strong, nonatomic) IBOutlet UIImageView *dottedLine3;
+
+@property (strong, nonatomic) IBOutlet UIImageView *photoImageView1;
+@property (strong, nonatomic) IBOutlet UIImageView *photoImageView2;
+
 - (IBAction)aisleButtonPressed:(id)sender;
+- (IBAction)furnitureButtonPressed:(id)sender;
+- (IBAction)doneButtonPressed:(id)sender;
+
 
 @end
 

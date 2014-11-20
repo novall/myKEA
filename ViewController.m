@@ -9,9 +9,11 @@
 #import "ViewController.h"
 #import <iAd/iAd.h>
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate, ADBannerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ViewController () < ADBannerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet ADBannerView *adBanner;
+
+@property (nonatomic, assign) BOOL isAisleTag;
 
 @end
 
@@ -26,18 +28,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                              message:@"Device has no camera"
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OK"
-                                                    otherButtonTitles: nil];
-        
-        [myAlertView show];
-        
-    }
+    self.dottedLine1.hidden = NO;
+    self.dottedLine3.hidden = YES;
+    self.isAisleTag = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,69 +38,141 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITableView DataSource and Delegate Methods
+#pragma mark - Camera Actions
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
+- (IBAction)furnitureButtonPressed:(id)sender {
+    
+    self.isAisleTag = NO;
+    
+    self.dottedLine3.hidden = YES;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3];
+    //self.dottedLine1.frame = CGRectMake(10, 6, 140, 138);
+    self.dottedLine1.frame = CGRectMake(160, 6, 140, 138);
+    [UIView commitAnimations];
+    
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
+                                                              message:@"This device doesn't seem to have camera."
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        
+    }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 7;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellIdentifier"];
-  //  NSArray *placeholderArray = @[@"lamp", @"table", @"chairs", @"plates", @"pots", @"pans", @"desk"];
-  //  cell.textLabel.text = placeholderArray[indexPath.row];
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 30;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 30)];
-    view.layer.borderWidth = 1;
-    view.layer.borderColor = [UIColor grayColor].CGColor;
-    /* Create custom view to display section header... */
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 30)];
-    [label setFont:[UIFont systemFontOfSize:20]];
-    label.textAlignment = NSTextAlignmentCenter;
-    NSString *string =@"My Cart";
-    /* Section header is in 0th index... */
-    [label setText:string];
-    [view addSubview:label];
-    [label setTextColor:[UIColor darkGrayColor]];
-    [view setBackgroundColor:[UIColor whiteColor]];
-    return view;
-}
-
-#pragma mark - Actions
-
-- (IBAction)bedButtonPressed:(id)sender {
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
-    [self presentViewController:picker animated:YES completion:NULL];
+    [self presentViewController:picker animated:YES completion:nil];
 }
+
+
+
 
 - (IBAction)aisleButtonPressed:(id)sender {
     
+    self.dottedLine3.hidden = YES;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3];
+    //self.dottedLine1.frame = CGRectMake(10, 6, 140, 138);
+    self.dottedLine1.frame = CGRectMake(10, 6, 140, 138);
+    [UIView commitAnimations];
+    
+    self.isAisleTag = YES;
+    
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
+                                                              message:@"This device doesn't seem to have a camera."
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        
+    }
+
+    
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
-    [self presentViewController:picker animated:YES completion:NULL];
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (IBAction)doneButtonPressed:(id)sender
+{
+    self.isAisleTag = NO;
+    self.dottedLine3.hidden = YES;
+    
+    // Reset
+    [self.aisleButton setImage:[UIImage imageNamed:@"aisle_tag"] forState:UIControlStateNormal];
+    [self.furnitureButton setImage:[UIImage imageNamed:@"furnitureButton"] forState:UIControlStateNormal];
+}
+
+#pragma mark - UIImageView Delegate Methods
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    
+     if (self.isAisleTag == YES)
+     {
+         self.photoImageView1.image = chosenImage;
+         
+         [self.aisleButton setImage:chosenImage forState:UIControlStateNormal];
+         
+         
+         if (!(self.photoImageView2.image))
+         {
+             [UIView beginAnimations:nil context:nil];
+             [UIView setAnimationDuration:0.7];
+             //self.dottedLine1.frame = CGRectMake(10, 6, 140, 138);
+             self.dottedLine1.frame = CGRectMake(170, 6, 140, 138);
+             [UIView commitAnimations];
+         }
+     }
+    
+    else
+    {
+        self.photoImageView2.image = chosenImage;
+        
+        [self.furnitureButton setImage:chosenImage forState:UIControlStateNormal];
+       
+        
+        
+        if (self.isAisleTag == NO)
+        {
+            self.dottedLine1.hidden = NO;
+            
+        }
+
+    }
+    
+    
+    if (self.photoImageView1.image && self.photoImageView2.image)
+    {
+        // Display Large dotted line to prompt user to click done.
+        self.dottedLine1.hidden = YES;
+        self.dottedLine3.hidden = NO;
+    }
+    
+    self.isAisleTag = NO;
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Ad Delegate Methods
@@ -129,5 +194,6 @@
         self.adBanner.alpha = 0.0;
     }];
 }
+
 
 @end
