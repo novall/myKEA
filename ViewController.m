@@ -114,7 +114,7 @@
     
     // Reset
     [self.aisleButton setImage:[UIImage imageNamed:@"aisle_tag"] forState:UIControlStateNormal];
-    [self.furnitureButton setImage:[UIImage imageNamed:@"furnitureButton"] forState:UIControlStateNormal];
+    [self.furnitureButton setImage:[UIImage imageNamed:@"chairButton"] forState:UIControlStateNormal];
 }
 
 #pragma mark - UIImageView Delegate Methods
@@ -134,8 +134,7 @@
          {
              [UIView beginAnimations:nil context:nil];
              [UIView setAnimationDuration:0.7];
-             //self.dottedLine1.frame = CGRectMake(10, 6, 140, 138);
-             self.dottedLine1.frame = CGRectMake(170, 6, 140, 138);
+             self.dottedLine1.frame = CGRectMake(160, 6, 140, 138);
              [UIView commitAnimations];
          }
      }

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAM-xg-FyJ" userLabel="Button Holder View">
-                                <rect key="frame" x="146" y="88" width="309" height="149"/>
+                                <rect key="frame" x="146" y="88" width="309" height="201"/>
                                 <subviews>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gEf-Ev-35b" userLabel="Photo Image View 1"/>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6Q-Iu-yyt" userLabel="Aisle Button">
@@ -32,7 +32,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPs-Zq-BbW" userLabel="Furniture Button">
                                         <rect key="frame" x="171" y="13" width="118" height="118"/>
-                                        <state key="normal" image="furnitureButton">
+                                        <state key="normal" image="chairButton">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -43,14 +43,14 @@
                                         <rect key="frame" x="10" y="6" width="140" height="138"/>
                                     </imageView>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dotted_line_large" translatesAutoresizingMaskIntoConstraints="NO" id="oG0-ih-Zha">
-                                        <rect key="frame" x="8" y="1" width="293" height="142"/>
+                                        <rect key="frame" x="8" y="1" width="293" height="200"/>
                                     </imageView>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4h-oh-fgG" userLabel="Photo Image View 2"/>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="309" id="LmP-jJ-xrg"/>
-                                    <constraint firstAttribute="height" constant="149" id="x7A-no-FVp"/>
+                                    <constraint firstAttribute="height" constant="201" id="x7A-no-FVp"/>
                                 </constraints>
                             </view>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Xp-Ey-14E">
@@ -70,46 +70,18 @@
                                     <constraint firstAttribute="width" constant="72" id="vvg-HS-aOw"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="right" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW6-30-poX">
-                                <rect key="frame" x="150" y="235" width="300" height="130"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="3Zv-qV-E9w"/>
-                                    <constraint firstAttribute="width" constant="300" id="not-H0-kPx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Add to Bag" image="addToCartButton">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Nk-wo-D7T"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0Q-x8-EeZ" userLabel="Go to Cart Button">
-                                <rect key="frame" x="150" y="366" width="300" height="130"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="Dt8-Xl-2NG"/>
-                                    <constraint firstAttribute="width" constant="300" id="i1g-bp-ANB"/>
-                                </constraints>
-                                <state key="normal" image="goToCartButton">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="fGY-DU-BuR" kind="showDetail" id="AAJ-Yp-tEk"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myKEALogo" translatesAutoresizingMaskIntoConstraints="NO" id="Bbp-z1-5uo">
-                                <rect key="frame" x="212" y="35" width="176" height="45"/>
+                                <rect key="frame" x="230" y="35" width="141" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="Fu7-Uu-FL2"/>
+                                    <constraint firstAttribute="width" constant="141" id="Fu7-Uu-FL2"/>
                                     <constraint firstAttribute="height" constant="45" id="iMD-RX-MEt"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQQ-TF-niN">
-                                <rect key="frame" x="519" y="485" width="65" height="61"/>
+                                <rect key="frame" x="548" y="504" width="42" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="mGZ-LZ-hij"/>
-                                    <constraint firstAttribute="width" constant="65" id="pHI-7N-Tm7"/>
+                                    <constraint firstAttribute="height" constant="42" id="mGZ-LZ-hij"/>
+                                    <constraint firstAttribute="width" constant="42" id="pHI-7N-Tm7"/>
                                 </constraints>
                                 <color key="tintColor" red="0.2445870175" green="0.4182882007" blue="0.99083227039999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="infoButton">
@@ -119,31 +91,71 @@
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow1" translatesAutoresizingMaskIntoConstraints="NO" id="07l-62-hLJ">
                                 <rect key="frame" x="458" y="178" width="64" height="111"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Jot down a note" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FKX-Y5-GbO">
+                                <rect key="frame" x="167" y="237" width="267" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MD0-Rn-T0l"/>
+                                    <constraint firstAttribute="width" constant="267" id="ob2-Ki-68h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW6-30-poX">
+                                <rect key="frame" x="274" y="276" width="53" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="3Zv-qV-E9w"/>
+                                    <constraint firstAttribute="width" constant="53" id="not-H0-kPx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" image="plus">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Nk-wo-D7T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0Q-x8-EeZ" userLabel="Go to Cart Button">
+                                <rect key="frame" x="192" y="339" width="199" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="Dt8-Xl-2NG"/>
+                                    <constraint firstAttribute="width" constant="199" id="i1g-bp-ANB"/>
+                                </constraints>
+                                <state key="normal" image="empty_cart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fGY-DU-BuR" kind="showDetail" id="AAJ-Yp-tEk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="FKX-Y5-GbO" secondAttribute="centerX" id="3De-We-oqo"/>
                             <constraint firstItem="e0Q-x8-EeZ" firstAttribute="top" secondItem="DW6-30-poX" secondAttribute="bottom" constant="1" id="6Si-7H-ucb"/>
-                            <constraint firstItem="CbB-ZA-IgI" firstAttribute="top" secondItem="yAM-xg-FyJ" secondAttribute="bottom" constant="45" id="83z-eJ-Vq2"/>
-                            <constraint firstItem="e0Q-x8-EeZ" firstAttribute="top" secondItem="DW6-30-poX" secondAttribute="bottom" constant="1" id="8Y1-uM-zZR"/>
+                            <constraint firstItem="CbB-ZA-IgI" firstAttribute="top" secondItem="yAM-xg-FyJ" secondAttribute="bottom" constant="-7" id="83z-eJ-Vq2"/>
+                            <constraint firstItem="e0Q-x8-EeZ" firstAttribute="top" secondItem="DW6-30-poX" secondAttribute="bottom" constant="14" id="8Y1-uM-zZR"/>
                             <constraint firstItem="Bbp-z1-5uo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="Ant-7j-bfG"/>
                             <constraint firstItem="CbB-ZA-IgI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="94" id="Cdi-tp-mjg"/>
                             <constraint firstItem="DW6-30-poX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EjW-GM-XvZ"/>
                             <constraint firstItem="DW6-30-poX" firstAttribute="leading" secondItem="yAM-xg-FyJ" secondAttribute="leading" id="Gu6-LD-U70"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aQQ-TF-niN" secondAttribute="bottom" constant="54" id="IgK-HE-4Az"/>
-                            <constraint firstItem="aQQ-TF-niN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="JBd-NL-CsE"/>
-                            <constraint firstItem="e0Q-x8-EeZ" firstAttribute="top" secondItem="DW6-30-poX" secondAttribute="bottom" constant="1" id="P7K-Px-1LA"/>
+                            <constraint firstItem="aQQ-TF-niN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="6" id="JBd-NL-CsE"/>
+                            <constraint firstItem="CbB-ZA-IgI" firstAttribute="top" secondItem="FKX-Y5-GbO" secondAttribute="bottom" constant="15" id="LhR-5j-Qla"/>
+                            <constraint firstItem="e0Q-x8-EeZ" firstAttribute="top" secondItem="DW6-30-poX" secondAttribute="bottom" constant="14" id="P7K-Px-1LA"/>
                             <constraint firstAttribute="centerX" secondItem="yAM-xg-FyJ" secondAttribute="centerX" id="RCb-fb-pCI"/>
                             <constraint firstAttribute="centerX" secondItem="Bbp-z1-5uo" secondAttribute="centerX" id="T8K-ZX-ytK"/>
                             <constraint firstItem="yAM-xg-FyJ" firstAttribute="top" secondItem="Bbp-z1-5uo" secondAttribute="bottom" constant="8" id="U6U-R9-2Vs"/>
                             <constraint firstAttribute="centerX" secondItem="4Xp-Ey-14E" secondAttribute="centerX" id="YXL-PG-9lv"/>
                             <constraint firstItem="e0Q-x8-EeZ" firstAttribute="top" secondItem="DW6-30-poX" secondAttribute="bottom" constant="1" id="cgo-2h-Ube"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Xp-Ey-14E" secondAttribute="bottom" id="ddV-q3-fdX"/>
+                            <constraint firstItem="FKX-Y5-GbO" firstAttribute="top" secondItem="Bbp-z1-5uo" secondAttribute="bottom" constant="157" id="gLM-31-0di"/>
                             <constraint firstItem="4Xp-Ey-14E" firstAttribute="top" secondItem="CbB-ZA-IgI" secondAttribute="bottom" constant="132" id="gon-ws-z30"/>
-                            <constraint firstItem="DW6-30-poX" firstAttribute="top" secondItem="Bbp-z1-5uo" secondAttribute="bottom" constant="155" id="lgx-Xh-vLJ"/>
-                            <constraint firstItem="CbB-ZA-IgI" firstAttribute="top" secondItem="yAM-xg-FyJ" secondAttribute="bottom" constant="45" id="mvs-E3-jm8"/>
-                            <constraint firstAttribute="centerX" secondItem="e0Q-x8-EeZ" secondAttribute="centerX" id="nWd-x6-QxK"/>
-                            <constraint firstAttribute="centerX" secondItem="DW6-30-poX" secondAttribute="centerX" id="vif-xX-hqC"/>
+                            <constraint firstItem="DW6-30-poX" firstAttribute="top" secondItem="Bbp-z1-5uo" secondAttribute="bottom" constant="196" id="lgx-Xh-vLJ"/>
+                            <constraint firstItem="CbB-ZA-IgI" firstAttribute="top" secondItem="yAM-xg-FyJ" secondAttribute="bottom" constant="-7" id="mvs-E3-jm8"/>
+                            <constraint firstAttribute="centerX" secondItem="e0Q-x8-EeZ" secondAttribute="centerX" constant="8.5" id="nWd-x6-QxK"/>
+                            <constraint firstAttribute="centerX" secondItem="DW6-30-poX" secondAttribute="centerX" constant="-0.5" id="vif-xX-hqC"/>
                             <constraint firstItem="yAM-xg-FyJ" firstAttribute="top" secondItem="Bbp-z1-5uo" secondAttribute="bottom" constant="8" id="zts-qh-34e"/>
                         </constraints>
                         <variation key="default">
@@ -204,7 +216,7 @@
                                                             <rect key="frame" x="185" y="29" width="135" height="120"/>
                                                             <color key="tintColor" red="0.3088560628" green="0.55952887240000004" blue="0.7347146739" alpha="1" colorSpace="calibratedRGB"/>
                                                         </imageView>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note about this item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zpv-Hy-SGp" userLabel="Text Field">
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Jot down a note about this item." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zpv-Hy-SGp" userLabel="Text Field">
                                                             <rect key="frame" x="39" y="168" width="281" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -267,17 +279,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addToCartButton" width="892" height="393"/>
         <image name="aisle_tag" width="246" height="246"/>
         <image name="arrow1" width="289" height="709"/>
         <image name="arrow2" width="280" height="779"/>
         <image name="camera" width="333" height="333"/>
+        <image name="chairButton" width="333" height="333"/>
         <image name="dotted_line" width="333" height="333"/>
         <image name="dotted_line_large" width="352" height="214"/>
         <image name="dotted_outline" width="400" height="400"/>
-        <image name="furnitureButton" width="246" height="246"/>
-        <image name="goToCartButton" width="888" height="381"/>
-        <image name="infoButton" width="379" height="373"/>
+        <image name="empty_cart" width="401" height="321"/>
+        <image name="infoButton" width="383" height="385"/>
         <image name="myKEALogo" width="378" height="143"/>
+        <image name="plus" width="453" height="454"/>
     </resources>
 </document>
