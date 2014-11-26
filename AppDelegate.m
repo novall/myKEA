@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "Appirater.h"
+#import <GoogleAnalytics-iOS-SDK/GAI.h>
+#import "GoogleAnalytics.h"
 
 @interface AppDelegate ()
 
@@ -19,11 +21,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [GoogleAnalytics setupGoogleAnalyticsWithID:@"UA-57115847-1"];
+    
     [Appirater setAppId:@"943218320"];
     [Appirater setDaysUntilPrompt:7];
     [Appirater setUsesUntilPrompt:2];
     [Appirater appLaunched:YES];
-    [Appirater setDebug:YES];
+    [Appirater setDebug:NO];
 
     return YES;
 }

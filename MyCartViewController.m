@@ -1,18 +1,27 @@
 //
 //  MyCartViewController.m
-//  iKEA
+//  myKEA
 //
 //  Created by Novall Khan on 11/19/14.
 //  Copyright (c) 2014 Novall Khan. All rights reserved.
 //
 
 #import "MyCartViewController.h"
+#import "GoogleAnalytics.h"
+#import "Theme+Colors.h"
 
 @interface MyCartViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 
 @end
 
 @implementation MyCartViewController
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [GoogleAnalytics trackUIActionCategoryWithAction:GoogleAnalyticsActionNavigation
+                                               label:GoogleAnalyticsLabelNavigatedToCart];
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -85,7 +94,11 @@
 }
 */
 
-- (IBAction)cameraSegueButtonPressed:(id)sender {
+- (IBAction)cameraSegueButtonPressed:(id)sender
+{
+    [GoogleAnalytics trackUIActionCategoryWithAction:GoogleAnalyticsActionNavigation
+                                               label:GoogleAnalyticsLabelNavigatedBackToHome];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
